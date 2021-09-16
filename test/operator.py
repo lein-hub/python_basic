@@ -161,10 +161,22 @@
 #     print(i, sum)
 # print('final value', sum)
 
-sum = 0
-while True:
-    val = int(input())
-    if val == 0:
-        break
-    sum += val
-print(sum)
+# sum = 0
+# while True:
+#     val = int(input())
+#     if val == 0:
+#         break
+#     sum += val
+# print(sum)
+
+# n = int(input())
+# list = []
+# if n >= 1:
+#     list = [input() for a in range(n)]
+# print(list)
+
+size = int(input())
+arr = [int(input()) for i in range(size)]
+arr2 = [i for i in arr if i >= 0]
+for i in arr2:
+    print(i)

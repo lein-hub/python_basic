@@ -175,8 +175,8 @@
 #     list = [input() for a in range(n)]
 # print(list)
 
-size = int(input())
-arr = [int(input()) for i in range(size)]
-arr2 = [i for i in arr if i >= 0]
-for i in arr2:
-    print(i)
+# size = int(input())
+# arr = [int(input()) for i in range(size)]
+# arr2 = [i for i in arr if i >= 0]
+# for i in arr2:
+#     print(i)

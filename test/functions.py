@@ -267,25 +267,208 @@
 
 ##########################################################
 
-def my_range(*num):
-    step = 1
-    if len(num) == 1:
-        start = 0
-        end = num[0]
-    elif len(num) >= 2:
-        start = num[0]
-        end = num[1]
-        if len(num) > 2:
-            step = num[2]
+# def my_range(*num):
+#     step = 1
+#     if len(num) == 1:
+#         start = 0
+#         end = num[0]
+#     elif len(num) >= 2:
+#         start = num[0]
+#         end = num[1]
+#         if len(num) > 2:
+#             step = num[2]
 
-    while start < end:
-        yield start
-        start += step
+#     while start < end:
+#         yield start
+#         start += step
 
 
-list1 = [i for i in my_range(5)]
-list2 = [i for i in my_range(2, 5)]
-list3 = [i for i in my_range(1, 10, 2)]
-print(list1)
-print(list2)
-print(list3)
+# list1 = [i for i in my_range(5)]
+# list2 = [i for i in my_range(2, 5)]
+# list3 = [i for i in my_range(1, 10, 2)]
+# print(list1)
+# print(list2)
+# print(list3)
+
+##########################################################
+
+# def add(first, second):
+#     return first+second
+
+
+# def sub(first, second):
+#     return first-second
+
+
+# def executor(func, op, param1, param2):
+#     return func[op](param1, param2)
+
+
+# func = {'+': add, '-': sub}
+# print(executor(func, '+', 1, 2))
+# print(executor(func, '-', 1, 2))
+
+##########################################################
+
+# def add(first, second):
+#     return first+second
+
+
+# def sub(first, second):
+#     return first-second
+
+
+# def get_func(op):
+#     if op == '+':
+#         return add
+#     else:
+#         return sub
+
+
+# result = get_func('+')(1, 2)
+# print(result)
+
+##########################################################
+
+# def calculate(op, num1, num2):
+#     def add(num1, num2):
+#         return num1 + num2
+
+#     def sub(num1, num2):
+#         return num1 - num2
+
+#     if op == '+':
+#         return add(num1, num2)
+#     else:
+#         return sub(num1, num2)
+
+
+# print(calculate('-', 1, 2))
+
+##########################################################
+
+# def calculate(op):
+#     def add(num1, num2):
+#         return num1 + num2
+
+#     def sub(num1, num2):
+#         return num1 - num2
+
+#     if op == '+':
+#         return add
+#     else:
+#         return sub
+
+
+# print(calculate('-')(1, 2))
+
+##########################################################
+
+# def func():
+#     value = 2
+
+#     def nested_func():
+#         value = 3
+#         print('nested', value)
+#     nested_func()
+#     print('outer', value)
+
+
+# func()
+
+##########################################################
+
+# def func():
+#     value = 2
+
+#     def nested_func():
+#         nonlocal value
+#         value = 3
+#         print('nested', value)
+#     nested_func()
+#     print('outer', value)
+
+
+# func()
+
+
+# def func():
+#     value = 2
+
+#     def nested_func():
+#         print('nested', value)
+#     nested_func()
+#     print('outer', value)
+
+
+# func()
+
+##########################################################
+
+# def func():
+#     print('hello')
+
+
+# def func():
+#     print('bye')
+
+
+# func()
+
+# if int(input()) == 1:
+#     def func():
+#         print('hello')
+# else:
+#     def func():
+#         print('bye')
+
+# func()
+
+##########################################################
+
+# def scale_up():
+#     scale = 10
+
+#     def calculate(number):
+#         return number*scale
+#     return calculate
+
+
+# func = scale_up()
+# print(func(5))
+
+##########################################################
+
+# num = 0
+# try:
+#     num = int(input())
+# except ValueError:
+#     num = 0
+# finally:
+#     print(num)
+
+##########################################################
+
+# list = [1, 2, 3]
+# value = 0
+# try:
+#     index = int(input())
+#     value = list[index]
+# except (ValueError, IndexError):
+#     value = list[0]
+# print(value)
+
+##########################################################
+
+dict = {1: 'one', 2: 'two'}
+num1 = int(input())
+num2 = int(input())
+try:
+    value = 10/num1
+    value2 = dict[num2]
+except ZeroDivisionError as error1:
+    print(error1)
+except KeyError as error2:
+    print(error2)
+else:
+    print(value, value2)

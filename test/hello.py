@@ -60,17 +60,17 @@
 # print(multi2)
 # print(multi1, multi2)
 
-# str = 'hello my friend'
-# split_default = str.split()
-# split_char = str.split('e')
-# print(split_default)
-# print(split_char)
-# str_list = list(str)
-# print(str_list)
-# joined_empty = ''.join(str_list)
-# joined_char = '-'.join(str_list)
-# print(joined_empty)
-# print(joined_char)
+str = 'hello my friend'
+split_default = str.split()
+split_char = str.split('e')
+print(split_default)
+print(split_char)
+str_list = list(str)
+print(str_list)
+joined_empty = ''.join(str_list)
+joined_char = '-'.join(str_list)
+print(joined_empty)
+print(joined_char)
 
 # list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # sub1 = list[5:8]

@@ -12,6 +12,3 @@ def solution(left, right):
             result -= i
 
     return result
-
-
-print(solution(13, 17))

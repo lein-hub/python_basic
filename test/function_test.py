@@ -35,31 +35,52 @@
 
 # ----------------------------------------
 
+import random
+
 
 def merge(ls1, ls2):
     result = []
     while True:
-        if len(ls1) == 0:
-            return result.extend(ls2)
-        if len(ls2) == 0:
-            return result.extend(ls1)
+        if not ls1:
+            result.extend(ls2)
+            return result
+        if not ls2:
+            result.extend(ls1)
+            return result
 
         if ls1[0] > ls2[0]:
             result.append(ls2.pop(0))
         else:
             result.append(ls1.pop(0))
 
+# def merge(left, right):
+#     result = []
+#     while len(left) > 0 or len(right) > 0:
+#         if len(left) > 0 and len(right) > 0:
+#             if left[0] <= right[0]:
+#                 result.append(left.pop(0))
+#             else:
+#                 result.append(right.pop(0))
+#         elif len(left) > 0:
+#             result.extend(left)
+#             break
+#         else:
+#             result.extend(right)
+#             break
+#     return result
+
 
 def merge_sort(list):
-    if len(list) > 1:
-        ls1 = merge_sort(list[:len(list)//2])
-        ls2 = merge_sort(list[len(list)//2:])
+    length = len(list)
+    if length > 1:
+        ls1 = merge_sort(list[:length//2])
+        ls2 = merge_sort(list[length//2:])
         return merge(ls1, ls2)
 
     return list
 
 
-ls = [1, 6, 23, 5, 23, 5, 12, 6, 3]
+ls = [random.randint(0, 200) for i in range(100000)]
 
 print(merge_sort(ls))
 

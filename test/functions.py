@@ -265,6 +265,7 @@
 # print(next(gen))
 # print(next(gen))
 
+
 ##########################################################
 
 # def my_range(*num):
@@ -300,13 +301,13 @@
 #     return first-second
 
 
-# def executor(func, op, param1, param2):
-#     return func[op](param1, param2)
+# def executor(func, param1, param2):
+#     return func(param1, param2)
 
 
 # func = {'+': add, '-': sub}
-# print(executor(func, '+', 1, 2))
-# print(executor(func, '-', 1, 2))
+# print(executor(func['+'], 1, 2))
+# print(executor(func['-'], 1, 2))
 
 ##########################################################
 
@@ -460,15 +461,89 @@
 
 ##########################################################
 
-dict = {1: 'one', 2: 'two'}
-num1 = int(input())
-num2 = int(input())
-try:
-    value = 10/num1
-    value2 = dict[num2]
-except ZeroDivisionError as error1:
-    print(error1)
-except KeyError as error2:
-    print(error2)
-else:
-    print(value, value2)
+# dict = {1: 'one', 2: 'two'}
+# num1 = int(input())
+# num2 = int(input())
+# try:
+#     value = 10/num1
+#     value2 = dict[num2]
+# except ZeroDivisionError as error1:
+#     print(error1)
+# except KeyError as error2:
+#     print(error2)
+# else:
+#     print(value, value2)
+
+##########################################################
+
+# def add(first, second):
+#     if type(first) is not int or type(second) is not int:
+#         raise TypeError
+#     return first + second
+
+
+# try:
+#     add('1', 1)
+# except TypeError:
+#     print('not supported data type')
+
+##########################################################
+
+# def b_search(value, list):
+#     low, high = 0, len(list) - 1
+#     while low <= high:
+#         mid = (low+high) // 2
+#         if list[mid] == value:
+#             return mid
+#         if list[mid] > value:
+#             high = mid - 1
+#         else:
+#             low = mid + 1
+#     return -1
+
+
+# lst = [1, 3, 6, 9, 12, 15, 18, 21]
+# print('result index = ', b_search(6, lst))
+
+##########################################################
+
+# lst = [None for _ in range(10)]
+# size = len(lst)
+# top = -1
+
+# def push(value):
+#     global top
+#     if top < size - 1:
+#         top += 1
+#         lst[top] = value
+#     else:
+#         print('stack overflow')
+
+# def pop():
+#     global top
+#     if top > -1:
+#         value = lst[top]
+#         del lst[top]
+#         top -= 1
+#         return value
+#     else:
+#         print('stack empty')
+
+
+def my_range(*t):
+    length = len(t)
+    start = 0
+    step = 1
+    if length == 1:
+        end = t[0]
+    elif length == 2:
+        start = t[0]
+        end = t[1]
+    elif length == 3:
+        start = t[0]
+        end = t[1]
+        step = t[2]
+
+    while start < end:
+        yield start
+        start += step

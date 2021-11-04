@@ -1,22 +1,20 @@
 def solution(food_times, k):
     minimum_stack = 0
-    sorted_times = sorted(food_times)
+    sorted_times = [(0,0) for _ in len(food_times)]
+    for i in range(len(food_times)):
+        sorted_times[i] = (food_times[i], i)
+    sorted_times.sort(key=lambda x : (x[0], x[1]))
+    
     sorted_index = 0
     length = len(food_times)
     while k > 0:
-        nums_minimum = 1
-        minimum = sorted_times[sorted_index]
-        for i in sorted_times[1:]:
-            if i == minimum:
-                nums_minimum += 1
-            else:
-                break
+        minimum, _ = sorted_times[sorted_index]
 
         if k > (minimum - minimum_stack) * (length):
             k -= (minimum - minimum_stack) * (length)
 
-            sorted_index += nums_minimum
-            length -= nums_minimum
+            sorted_index += 1
+            length -= 1
             minimum_stack = minimum
 
         else:
